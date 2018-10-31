@@ -41,6 +41,12 @@ function draw() {
 
   imageMode(CENTER);
   image(earth, windowWidth/6, windowHeight/2, 400, 400);
+  textAlign(CENTER);
+  textFont('Montserrat');
+  textStyle(BOLD);
+  fill(255);
+  text("Click everywhere to send some astronaut into space",  windowWidth/2, windowHeight/2);
+
 	for(var j = 0; j < balls.length; j++) {
 		balls[j].move();
 		balls[j].display();
@@ -69,12 +75,12 @@ function Ball(_x, _y, _diameter, _label, _flag, _name) {
 		this.y += this.speed * this.yDir;
 
 
-    if (this.y >= height || this.y <= 0) {
+    if (this.y + 60 >= height|| this.y - 80 <= 0) {
 			// if 1, set to -1, if -1, set to 1
 			this.yDir *= -1;
 		}
 
-		if (this.x >= width || this.x <= 0) {
+		if (this.x + 100 >= width || this.x - 90 <= 0) {
 			this.xDir *= -1;
 		}
 
